@@ -1,14 +1,14 @@
-import { useState } from "react";
-import Formulario from "./components/Formulario";
-import ListaAtividade from "./components/ListaAtividade.jsx";
-import "./App.css";
+import { useState } from "react"
+import Formulario from "./components/Formulario"
+import ListaAtividade from "./components/ListaAtividade.jsx"
+import "./App.css"
 
 function App() {
-  const [tarefas, setTarefas] = useState([]);
+  const [tarefas, setTarefas] = useState([])
 
   const adicionarTarefa = (novaTarefa) => {
-    setTarefas([...tarefas, novaTarefa]);
-  };
+    setTarefas([...tarefas, novaTarefa])
+  }
 
   const concluirTarefa = (id) => {
     setTarefas(
@@ -17,14 +17,14 @@ function App() {
           ? { ...tarefa, concluida: !tarefa.concluida }
           : tarefa
       )
-    );
-  };
+    )
+  }
 
   const excluirTarefa = (id) => {
     setTarefas(
       tarefas.filter((tarefa) => tarefa.id !== id)
-    );
-  };
+    )
+  }
 
   return (
     <div className="container">
@@ -38,7 +38,7 @@ function App() {
         excluirTarefa={excluirTarefa}
       />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
